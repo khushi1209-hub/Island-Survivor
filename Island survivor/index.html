@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Island Survivor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="background"></div>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+
+        <div class="top-section">
+
+            <div class="status-card">
+                <h3>❤️ Health</h3>
+
+                <div class="health-bar">
+                    <div id="health-fill"></div>
+                </div>
+
+                <span id="health-text">100 / 100</span>
+            </div>
+            <div class="status-card">
+
+    <h3>⭐ Reputation</h3>
+
+    <div class="progress-bar">
+
+        <div id="reputation-fill"></div>
+
+    </div>
+
+    <span id="reputation-text">0</span>
+
+</div>
+
+            <div class="status-card">
+                <h3>📊 Progress</h3>
+
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+
+                <span id="progress-text">0%</span>
+            </div>
+
+        </div>
+
+        <div class="game-card">
+
+            <h1>🏝️ ISLAND SURVIVOR</h1>
+            <button id="new-game-btn">
+🗑 New Game
+</button>
+
+            <div id="story-text">
+
+                Loading Story...
+
+            </div>
+
+            <div id="choices"></div>
+
+        </div>
+
+        <div class="inventory-card">
+
+            <h2>🎒 Inventory</h2>
+
+            <ul id="inventory-list">
+
+                <li>Empty</li>
+
+            </ul>
+
+        </div>
+<div class="inventory-card">
+
+    <h2>🏆 Achievements</h2>
+
+    <ul id="achievement-list">
+
+        <li>None Yet</li>
+
+    </ul>
+
+</div>
+    </div>
+
+    <div id="achievement-popup">
+
+        🏆 Achievement Unlocked!
+
+    </div>
+
+    <audio id="click-sound" src="assets/sounds/click.mp3"></audio>
+    <audio id="success-sound" src="assets/sounds/success.mp3"></audio>
+    <audio id="gameover-sound" src="assets/sounds/gameover.mp3"></audio>
+    <audio id="achievement-sound" src="assets/sounds/achievement.mp3"></audio>
+
+    <script src="stories.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

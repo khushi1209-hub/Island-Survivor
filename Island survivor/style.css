@@ -1,0 +1,386 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    color:white;
+}
+
+#background{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+linear-gradient(
+135deg,
+#0f2027,
+#203a43,
+#2c5364
+);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    z-index:-3;
+}
+
+
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.55)
+    );
+    z-index:-2;
+}
+
+.container{
+    width:100%;
+    max-width:1300px;
+    margin:auto;
+    padding:30px;
+}
+
+.top-section{
+    display:flex;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.status-card{
+    flex:1;
+    backdrop-filter:blur(18px);
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:20px;
+    padding:20px;
+    box-shadow:
+0 10px 40px rgba(0,0,0,0.45);
+}
+
+.status-card h3{
+    margin-bottom:12px;
+}
+
+.health-bar,
+.progress-bar{
+    width:100%;
+    height:18px;
+    background:rgba(255,255,255,0.15);
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:10px;
+}
+
+#health-fill{
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+    90deg,
+    #ff4d4d,
+    #ff8080
+    );
+    transition:0.5s;
+}
+
+#progress-fill{
+    width:0%;
+    height:100%;
+    background:linear-gradient(
+    90deg,
+    #00d4ff,
+    #00ffae
+    );
+    transition:0.5s;
+}
+
+#reputation-fill{
+    width:0%;
+    height:100%;
+    background:linear-gradient(
+    90deg,
+    gold,
+    orange
+    );
+    transition:0.5s;
+}
+
+.game-card{
+    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:25px;
+    padding:35px;
+    box-shadow:
+0 10px 40px rgba(0,0,0,0.45);
+}
+
+.game-card h1{
+    text-align:center;
+    margin-bottom:25px;
+    letter-spacing:2px;
+}
+
+#story-text{
+    font-size:1.2rem;
+    line-height:1.8;
+    margin-bottom:30px;
+    min-height:120px;
+}
+
+#choices{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.choice-btn{
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:500;
+
+    color:white;
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.25);
+
+    transition:0.3s;
+
+}
+
+.choice-btn:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.03);
+
+    background:
+    rgba(255,255,255,0.20);
+
+    box-shadow:
+    0 0 25px
+    rgba(255,255,255,0.35);
+
+}
+
+.inventory-card{
+    margin-top:25px;
+    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,0.12);
+    border-radius:20px;
+    padding:25px;
+    border:1px solid rgba(255,255,255,0.15);
+}
+
+.inventory-card h2{
+    margin-bottom:15px;
+}
+
+#inventory-list{
+    list-style:none;
+}
+
+#inventory-list li{
+    padding:8px 0;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+}
+
+#achievement-popup{
+    position:fixed;
+    top:30px;
+    right:-400px;
+    padding:20px;
+    border-radius:15px;
+    background:rgba(255,215,0,0.95);
+    box-shadow:0 0 30px gold;
+font-size:20px;
+    color:black;
+    font-weight:bold;
+    transition:0.6s;
+    z-index:1000;
+}
+
+.show-achievement{
+    right:30px !important;
+    transform:scale(1.08);
+}
+
+@media(max-width:900px){
+
+    .top-section{
+        flex-direction:column;
+    }
+
+    .container{
+        padding:15px;
+    }
+
+    .game-card{
+        padding:20px;
+    }
+
+    #story-text{
+        font-size:1rem;
+    }
+}
+#new-game-btn{
+    margin-bottom:20px;
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+#background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: 0.8s ease;
+    z-index: -2;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    z-index: -1;
+}
+.fade-out{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:0.4s;
+
+}
+
+.game-card{
+box-shadow:
+0 10px 40px rgba(0,0,0,0.45);
+}
+.inventory-item{
+
+    list-style:none;
+
+    margin:8px 0;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    transition:0.3s;
+
+}
+
+.inventory-item:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 15px rgba(255,255,255,0.25);
+
+}
+.ending-card{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:rgba(255,215,0,0.12);
+
+    border:2px solid gold;
+
+    backdrop-filter:blur(10px);
+
+    animation:
+    goldGlow 2s infinite alternate;
+
+}
+@keyframes goldGlow{
+
+    from{
+        box-shadow:
+        0 0 10px rgba(255,215,0,0.3);
+    }
+
+    to{
+        box-shadow:
+        0 0 35px rgba(255,215,0,0.8);
+    }
+
+}
+.ending-title{
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    text-shadow:
+    0 0 20px gold;
+
+    animation:
+    endingGlow 2s infinite alternate;
+
+}
+
+@keyframes endingGlow{
+
+    from{
+        text-shadow:
+        0 0 10px gold;
+    }
+
+    to{
+        text-shadow:
+        0 0 30px gold;
+    }
+
+}
+.choice-btn:active{
+
+    transform:
+    scale(0.97);
+
+}
